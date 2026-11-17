@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A letter for {{ hassan_name }}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <style>
+    :root{font-family:Georgia,serif;color:#39303c;background:#f7e9ec}*{box-sizing:border-box}body{margin:0}.toolbar{padding:18px;text-align:center;font-family:Arial,sans-serif}.toolbar button,.toolbar a{display:inline-block;margin:3px;border:0;border-radius:3px;background:#302536;color:#fff;padding:12px 20px;text-decoration:none;font-size:14px;cursor:pointer}.page{width:min(760px,calc(100% - 30px));margin:10px auto 50px;background:#fffdf7;padding:65px clamp(25px,7vw,82px);box-shadow:0 22px 55px #45343d2b}.overline{font:700 11px Arial,sans-serif;letter-spacing:3px;color:#b57089;text-align:center}.page h1{font-size:clamp(36px,6vw,60px);font-weight:400;letter-spacing:-2px;text-align:center;margin:15px 0 40px}.page h1 em{color:#ae6882}.letter{font-size:17px;line-height:1.75}.letter p{margin:0 0 21px}.letter strong{color:#875068}.signature{font-size:28px;font-style:italic;color:#b06d84;margin-top:38px}.footer{border-top:1px solid #e1ced2;padding-top:17px;margin-top:32px;font:12px Arial,sans-serif;color:#9a7d88;letter-spacing:1px;text-align:center}@media print{@page{size:A4;margin:19mm}html,body{background:#fff}.toolbar{display:none}.page{width:auto;margin:0;padding:0;box-shadow:none}.page h1{font-size:38px;margin-bottom:25px}.letter{font-size:12pt;line-height:1.58}.letter p{margin-bottom:14px}.signature{font-size:22px}.footer{margin-top:20px}a[href]::after{content:none}}
+  </style>
+</head>
+<body>
+  <div class="toolbar"><button type="button" onclick="window.print()">Print or save as PDF</button><a href="{{ url_for('index') }}#apology">Back to the story</a></div>
+  <article class="page">
+    <div class="overline">A LITTLE NOTE FROM YOUR BESTIE</div>
+    <h1>Dear <em>{{ hassan_name }}...</em></h1>
+    <div class="letter">
+      <p>I know I messed up. Your birthday was important, and I should have wished you. I didn't, and I'm genuinely sorry.</p>
+      <p>I also know we haven't talked as much as we used to. Life has been really busy lately, but being busy doesn't make it okay if I made you feel ignored. <strong>You didn't deserve to feel forgotten.</strong></p>
+      <p>Sometimes I get caught up in everything and forget to show people how much they mean to me. Kam baat hone ka matlab yeh kabhi nahi tha ke tum important nahi ho.</p>
+      <p>You're still my best friend, {{ hassan_name }}. I miss our random conversations, stupid jokes, teasing each other, and the comfortable friendship we share.</p>
+      <p>I'm sorry for missing your day. I'm sorry for being less available. And I'm especially sorry if I made you feel unimportant.</p>
+      <p>I can't undo the missed birthday wish. I can make more effort going forward. No excuses. Just a genuine apology.</p>
+      <p>Tumhari bestie thori pagal hai, lekin tumhe bhooli nahi hai. 🥹</p>
+      {% if personal_message %}<p>{{ personal_message }}</p>{% endif %}
+    </div>
+    <div class="signature">— {{ bestie_name }} 💗</div>
+    <div class="footer">FOR {{ hassan_name | upper }} · SEALED WITH SINCERITY</div>
+  </article>
+</body>
+</html>
